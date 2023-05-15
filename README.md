@@ -32,14 +32,15 @@
   <img src="./personal-branding/app.png" alt="logo" width="100%"  height="auto" />
 
 
-# 📖 Hello-Rails-App <a name="about-project"></a>
+# 📖 Blog <a name="about-project"></a>
 
-Hello-Rails-App is `Ruby on Rails` base project it is just the begging of enthusiastic world of ROR
+Blog is `Ruby on Rails`  based project 
+The Blog app will be a classic example of a blog website fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-**Hello-Rails-App** is a just a hello world on ROR
+**Blog** is where you can talk about anything you did
 
 ## 🧪 Linters And test <a name="linters"></a>
-[![Linters](https://github.com/PowerLevel9000/Hello-Rails-App/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/Hello-Rails-App/actions/workflows/linters.yml)
+[![Linters](https://github.com/PowerLevel9000/Blog/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/Blog/actions/workflows/linters.yml)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -57,14 +58,14 @@ In this project we utilize our skills and knowledge to create this project
 <details>
   <summary>FrameWork</summary>
   <ul>
-    <li>ROR</li>
+    <li><a href="">ROR</a></li>
   </ul>
 </details>
 
 <details>
   <summary>DataBase</summary>
   <ul>
-    <li>Postgres</li>
+    <li><a href="">Postgres</a></li>
   </ul>
 </details>
 
@@ -72,8 +73,11 @@ In this project we utilize our skills and knowledge to create this project
 
 ### Key Features <a name="key-features"></a>
 
-- **Just Print the Hello Rails! on home page**
-
+- **Create A blog**
+- **log in**
+- **Sign in**
+- **like**
+- **Comment**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,7 +175,7 @@ npx stylelint "**/*.{css,scss}" //=> for CSS or SASS file linting
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Styling of various webpage**
-- [ ] **Navigation Bar**
+- [ ] **Improved Dashboard**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
