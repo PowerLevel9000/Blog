@@ -7,4 +7,7 @@ class User < ApplicationRecord
     posts.last(3)
   end
 
+  def update_posts_counter
+    update(posts_counter: posts.count)
+  end
 end
