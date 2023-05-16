@@ -29,7 +29,7 @@
 
 #  App mock
 
-  <img src="./personal-branding/app.png" alt="logo" width="100%"  height="auto" />
+  <img src="./personal-branding/app.png" alt="App Mock under construction..." width="100%"  height="auto" />
 
 
 # 📖 Blog <a name="about-project"></a>
