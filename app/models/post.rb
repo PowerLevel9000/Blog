@@ -13,11 +13,11 @@ class Post < ApplicationRecord
   def update_comment_counter
     update(comments_counter: comments.count)
   end
-  
+
   def update_like_counter
     update(likes_counter: likes.count)
   end
-  
+
   private
 
   def update_user_posts_counter
