@@ -24,4 +24,22 @@ RSpec.describe User, type: :model do
   it 'should print the post_counter 0' do
     expect(@user_one.posts_counter).to be(0) 
   end
+
+  describe "User Validation checking" do
+    it 'Name must not be blank' do
+      @user_one.name = nil
+      expect(@user_one).not_to be_valid  
+    end
+
+    it 'Posts counter should not be nill' do
+      @user_one.posts_counter = nil
+      expect(@user_one).not_to be_valid  
+    end
+
+    it 'Posts counter must not be negative just >=0' do
+      @user_one.posts_counter = -5
+      expect(@user_one).not_to be_valid  
+    end
+  end
+  
 end

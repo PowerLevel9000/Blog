@@ -22,6 +22,7 @@ RSpec.describe Post, type: :model do
     User.destroy_all
     Comment.destroy_all
     Like.destroy_all
+    Post.destroy_all
   end
 
   describe "Post Validation" do
