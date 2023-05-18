@@ -1,12 +1,29 @@
 class Comment < ApplicationRecord
+  # include IncrementorDcrementor  =>  can you check this i was unable to make my code dry i want to try this one
+  # Associations
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   belongs_to :post, class_name: 'Post'
-  after_create :update_comment
-  after_destroy :update_comment
+
+  # i was unable to make my code dry i want to try this one
+  # after_create { increment_counter(:comments_counter) } =>  can you check this
+  # after_destroy { decrement_counter(:comments_counter) } =>  can you check this
+
+  # creation and destructionction according to comment on post
+  after_create :decrement_comment_on_posts
+  after_destroy :decrement_comment_on_posts
 
   private
 
-  def update_comment
-    post.update_comment_counter
+  # I want to use my module can you help
+  # incrementor
+  def increment_comment_on_posts
+    post.comments_counter += 1
+    post.save
+  end
+
+  # decrementor
+  def decrement_comment_on_posts
+    post.comments_counter -= 1
+    post.save
   end
 end
