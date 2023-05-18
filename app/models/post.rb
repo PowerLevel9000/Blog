@@ -5,11 +5,11 @@ class Post < ApplicationRecord
   has_many :likes, class_name: 'Like', dependent: :destroy
   attribute :comments_counter, default: 0
   attribute :likes_counter, default: 0
-  
-  # creation and destruction according to Post creation by user  
+
+  # creation and destruction according to Post creation by user
   after_create :increment_user_posts_counter
   after_destroy :decrement_user_posts_counter
-  
+
   # validation
   validates :title, presence: true
   validates :title, length: { maximum: 250 }
@@ -20,15 +20,16 @@ class Post < ApplicationRecord
   def recent_five_comments
     comments.last(5)
   end
-  
+
   private
+
   # I want to use my module can you help
-  # Incrementor 
+  # Incrementor
   def increment_user_posts_counter
     author.posts_counter += 1
     author.save
   end
-  
+
   # Decrementor
   def decrement_user_posts_counter
     author.posts_counter -= 1
