@@ -1,2 +1,8 @@
-<h1>hello from Specifice users <%= @user.id %></h1>
-<h2><%= @user.posts %>
+<h1>Posts from Specifice users <%= @user.name %></h1>
+<section>
+  <% @user.posts.each do |post| %>
+    <h2><%= link_to post.title, user_post_path(@user, post) %><h2>
+    <p><%= post.text %></p>
+    <p><%= post.id %></p>
+  <% end %>
+</section>
