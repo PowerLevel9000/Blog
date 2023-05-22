@@ -5,6 +5,11 @@ Our blog has <%= User.count %> Users and counting!
     <li>
       <strong>User name : </strong>
       <%= link_to  user.name, user %>
+      <% if !user.posts_counter %>
+        <p><%= user.name %> has not Posted 📪 anything Yet </p>
+      <% else %>
+        <p>Post count <strong><%= user.posts_counter%></strong></p>
+      <% end %>
     </li>
   <% end %>
 </ul>
