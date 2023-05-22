@@ -1,1 +1,10 @@
-<h1>Hello Form Home</h1>
+<h1>Users!</h1>
+Our blog has <%= User.count %> Users and counting!
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <strong>User name : </strong>
+      <%= link_to  user.name, user %>
+    </li>
+  <% end %>
+</ul>
