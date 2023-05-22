@@ -1,0 +1,7 @@
+<h1>Different Posts by different users</h1>
+
+<% @posts.each do |post| %>
+    <h2><%= link_to post.title, user_post_path(post.author, post) %></h2>
+    <p><%= post.text%> <span>by <strong><%= post.author.name %></strong></span></p>
+<% end %>
+
