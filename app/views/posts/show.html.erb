@@ -1,0 +1,4 @@
+<h1>Post => <%= @post.title %> by <%= @post.author.name %> </h1>
+<p><%= @post.text %></p>
+<p><strong>Comment count :</strong><%= @post.comments_counter ? @post.comments_counter : "no Comments 💬 on this post " %>
+<p><strong>Like count :</strong><%= @post.likes_counter ? @post.likes_counter : "no Likes 💕 on this post "  %>

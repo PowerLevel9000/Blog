@@ -1,0 +1,12 @@
+<h1>Posts from Specifice users <%= @user.name %></h1>
+<% if @user.posts.length == 0 %>
+  <p><%= @user.name %> has not Posted 📪 anything Yet </p>
+<% else %>
+  <section>
+    <% @user.posts.each do |post| %>
+      <h2><%= link_to post.title, user_post_path(@user, post) %>
+      </h2>
+      <p><%= post.text %></p>
+    <% end %>
+  </section>
+<% end %>
