@@ -5,19 +5,19 @@ RSpec.describe 'Users', type: :request do
     user_attributes = {
       name: 'user-1',
       photo: 'image-1',
-      bio: 'World should obey my orders',
+      bio: 'World should obey my orders'
     }
     @user = User.create! user_attributes
   end
 
-  after :all do 
+  after :all do
     User.destroy_all
   end
 
   describe 'GET /index' do
-    it " response status should be  correct" do
-      get users_url 
-      expect(response).to be_successful 
+    it ' response status should be  correct' do
+      get users_url
+      expect(response).to be_successful
     end
 
     it 'correct template should be  rendered' do
@@ -31,9 +31,9 @@ RSpec.describe 'Users', type: :request do
     end
   end
   describe 'GET /user=[:id]' do
-    it " response status should be  correct" do
+    it ' response status should be  correct' do
       get user_url(@user)
-      expect(response).to be_successful 
+      expect(response).to be_successful
     end
 
     it 'correct template should be  rendered' do
