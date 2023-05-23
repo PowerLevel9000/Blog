@@ -11,7 +11,6 @@ RSpec.describe User, type: :model do
   end
 
   it "should give the name of user variable's value" do
-    puts @user_one.inspect, 'from user spec'
     expect(@user_one.name).to eq('jack')
     expect(@user_one.bio).to eq('es dunia ka papa')
     expect(@user_one.photo).to eq('')
