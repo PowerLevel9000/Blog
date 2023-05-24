@@ -1,15 +1,19 @@
 <h1>Users!</h1>
 Our blog has <%= User.count %> Users and counting!
-<ul>
+<div class = "user user-shelf ">
   <% @users.each do |user| %>
-    <li>
-      <strong>User name : </strong>
-      <%= link_to  user.name, user %>
-      <% if !user.posts_counter %>
-        <p><%= user.name %> has not Posted 📪 anything Yet </p>
-      <% else %>
-        <p>Post count <strong><%= user.posts_counter%></strong></p>
+    <div class="container d-flex w-100 gap-3">
+      <img src="https://randomuser.me/api/portraits/med/women/52.jpg" class="user-image img-thumbnail" >
+      <%= link_to user_path(user), class: "user-detail w-100 d-flex justify-content-center flex-column text-decoration-none mx-lg-3" do %>
+        <%# <div class="w-100 d-flex text-decoration-none"> %>
+        <h3 class="user-name"><%= user.name %></h3>
+        <% if !user.posts_counter %>
+          <span class="align-self-end d-block"> no Post 📪 Yet  </span>
+        <% else %>
+          <span class="align-self-end d-block"><%= user.name %> has <strong><%= user.posts_counter%></strong> posts </span>
+        <% end %>
+        <%# </div> %>
       <% end %>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
