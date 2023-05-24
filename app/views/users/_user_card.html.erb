@@ -1,0 +1,18 @@
+ 
+<div class="container mb-2 p-0 rounded border">
+  <%= link_to user_path(user), class: "user-detail p-0 w-100 text-decoration-none" do %>
+    <div class="row p-lg-0">
+      <div class="col-lg-3 col-md-3 col-sm-12">
+        <%= image_tag("#{user.photo}", alt: "#{user.name}-img", class: "user-image p-0 img-thumbnail w-100") %>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-12 d-flex flex-column justify-content-center p-3">
+        <h3 class="user-name align-self-start"><%= user.name %></h3>
+        <% if user.posts_counter == 0 %>
+          <span class="align-self-end d-block">no Post 📪 Yet</span>
+        <% else %>
+          <span class="align-self-end d-block"><%= user.name %> has <strong><%= user.posts_counter%></strong> posts</span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
-<div class="badge bg-secondary d-flex w-25 align-items-center gap-2">
+<%= link_to user_path(user), class: 'badge user-badge bg-dark rounded d-flex align-items-center gap-2 text-decoration-none' do %>
   <div class="d-grid place-items-center">
-    <img class='badge-image rounded-circle' src="https://randomuser.me/api/portraits/thumb/women/52.jpg" >
+    <%= image_tag("#{user.photo}", alt: "#{user.name}-img", class: "badge-image rounded-circle" )%>
   </div>
-  <strong class='fs-3'><%= user.name %></strong>
-</div>
+  <strong class='fs-5'><%= user.name %></strong>
+<% end %>

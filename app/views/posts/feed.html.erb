@@ -1,7 +1,4 @@
 <h1>post feed</h1>
-
 <% @posts.each do |post| %>
-    <h2><%= link_to post.title, user_post_path(post.author, post) %></h2>
-    <p><%= post.text%> <span>by <strong><%= post.author.name %></strong></span></p>
-    <%= render 'users/user_badge', user: post.author %>
+  <%= render 'post_card', post: post %>
 <% end %>

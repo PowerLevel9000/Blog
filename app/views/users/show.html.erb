@@ -1,12 +1,29 @@
-<h1>Posts from Specifice users <%= @user.name %></h1>
+<%= render 'user_card', user: @user %>
+<div class="card">
+  <div class="card-header bg-dark text-light">
+    <h2>Bio</h2>
+  </div>
+  <div class="card-body bg-success text-light">
+    <p class="card-text"><%= @user.bio %></p>
+  </div>
+</div>
+<h2 class="text-center text-primary fs-1 my-5">Recent Posts 📪</h2>
 <% if @user.posts.length == 0 %>
-  <p><%= @user.name %> has not Posted 📪 anything Yet </p>
+  <div class="card">
+    <div class="card-header bg-dark text-light">
+      <h2><%= @user.name %></h2>
+    </div>
+    <div class="card-body bg-success text-light">
+      <p class="card-text">📪No Post yet 💕💬 But Soon in Future 🙌🙌😁</p>
+    </div>
+  </div>
 <% else %>
   <section>
-    <% @user.posts.each do |post| %>
-      <h2><%= link_to post.title, user_post_path(@user, post) %>
-      </h2>
-      <p><%= post.text %></p>
+    <% @user.last_three.each do |post| %>
+      <%= render 'posts/post_card', post: post %>
     <% end %>
   </section>
 <% end %>
+<div class="text-center my-5">
+  <%= link_to 'See all Posts', user_posts_path(@user), class: 'btn btn-success' %>
+</div>

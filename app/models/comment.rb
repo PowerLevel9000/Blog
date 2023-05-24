@@ -9,7 +9,7 @@ class Comment < ApplicationRecord
   # after_destroy { decrement_counter(:comments_counter) } =>  can you check this
 
   # creation and destructionction according to comment on post
-  after_create :decrement_comment_on_posts
+  after_create :increment_comment_on_posts
   after_destroy :decrement_comment_on_posts
 
   private
