@@ -1,8 +1,21 @@
-<div class="card border-success m-3">
+<% posts.each do |post| %>
+  <div class="card border-success m-3">
     <div class="card-header bg-transparent p-0 "><%= render 'users/user_badge', user: post.author %></div>
     <div class="card-body text-success">
       <h5 class="card-title"><%= link_to post.title, user_post_path(post.author, post) %></h5>
-      <p class="card-text"><%= post.text%></p>
+      <p class="card-text"><%= post.text.length > 100 ? post.text[0,100]... : post.text %></p>
     </div>
-    <div class="card-footer bg-secondary text-light border-success">Posted on : <%= post.created_at.strftime("%Y-%m-%d") %></div>
-</div>
+    <div class="card-footer bg-secondary text-light border-success d-flex justify-content-between align-items-center">
+      <span>Posted on : <%= post.created_at.strftime("%Y-%m-%d") %></span>
+      <div class="d-flex gap-2">
+        <span>Comments 💬: <%= post.comments_counter %></span>
+        <span>Likes 💕: <%= post.likes_counter %></span>
+      </div>
+    </div>
+  </div>
+  
+  <% if comments==true %>
+    <h1> hi from comments</h1>
+  <% end %>
+  
+<% end %>

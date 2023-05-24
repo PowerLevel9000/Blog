@@ -1,5 +1,4 @@
-<h1>Users!</h1>
-Our blog has <%= User.count %> Users and counting!
+<%= render 'layouts/title', title: "Our Blog App has #{User.count} Users and counting!" %>
 <div class="user user-shelf">
   <% @users.each do |user| %>
     <%= render 'user_card', user: user %>

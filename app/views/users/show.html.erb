@@ -19,9 +19,7 @@
   </div>
 <% else %>
   <section>
-    <% @user.last_three.each do |post| %>
-      <%= render 'posts/post_card', post: post %>
-    <% end %>
+    <%= render 'posts/post_card', posts: @user.last_three, comments: false %>
   </section>
 <% end %>
 <div class="text-center my-5">

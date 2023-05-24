@@ -1,4 +1,2 @@
-<h1>post feed</h1>
-<% @posts.each do |post| %>
-  <%= render 'post_card', post: post %>
-<% end %>
+<%= render 'layouts/title', title: "Post Feed" %>
+<%= render 'post_card', posts: @posts, comments: false %>
