@@ -1,1 +1,5 @@
-<h1>This is where we will show all posts by the users </h1>
+<%= render 'users/user_card', user: @user %>
+<%= render 'post_card', posts: @posts, comments: true %>
+<div class="text-center my-5" >
+  <button type="button" class="btn btn-success fs-3 text-light">Pagination</button>
+</div>

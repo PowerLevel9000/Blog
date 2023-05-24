@@ -1,0 +1,6 @@
+<%= link_to user_path(user), class: 'badge user-badge bg-dark rounded d-flex align-items-center gap-2 text-decoration-none' do %>
+  <div class="d-grid place-items-center">
+    <%= image_tag("#{user.photo}", alt: "#{user.name}-img", class: "badge-image rounded-circle" )%>
+  </div>
+  <strong class='fs-5'><%= user.name %></strong>
+<% end %>
