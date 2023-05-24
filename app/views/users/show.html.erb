@@ -23,5 +23,7 @@
   </section>
 <% end %>
 <div class="text-center my-5">
-  <%= link_to 'See all Posts', user_posts_path(@user), class: 'btn btn-success' %>
+  <% unless @user.posts_counter == 0 %>
+    <%= link_to 'See all Posts', user_posts_path(@user), class: 'btn btn-success' %>
+  <% end %>
 </div>
