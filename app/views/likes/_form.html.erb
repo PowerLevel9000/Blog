@@ -1,0 +1,3 @@
+<%= form_with url:url, method: :post,scope: :new_like,local: true do |f|%>
+  <span> <%= f.submit "likes 💕 :#{@post.likes_counter}", disable_with: "likes 😍 : #{@post.likes_counter}" %></span>
+<%end%>
