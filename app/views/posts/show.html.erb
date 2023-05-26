@@ -2,7 +2,7 @@
   <div class="card-header bg-transparent p-0"><%= render 'users/user_badge', user: @post.author %></div>
   <div class="card-body">
     <h5 class="card-title d-flex justify-content-between"><%= @post.title %><span><span>Comments 💬 :<%= @post.comments_counter %></span> <span>likes 💕 :<%=@post.likes_counter%></span></span></h5>
-    <p class="card-text"><%= @post.text %></p>
+    <p class="card-text"><%= markdown(@post.text) %></p>
   </div>
   <ul class="list-group list-group-flush">
     <% @post.comments.each do |comment| %>
