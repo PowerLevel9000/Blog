@@ -49,7 +49,7 @@ gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 # gem "sassc-rails"
 
 # Gemfile
-gem "redcarpet"
+gem 'redcarpet'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
