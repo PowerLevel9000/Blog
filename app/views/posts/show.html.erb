@@ -9,15 +9,14 @@
       <li class="comments list-group-item"><%= comment.author.name%> : <%= comment.text %></li>
     <% end %>
   </ul>
-  <div class="card-footer text-center bg-secondary text-light">
+  <div class="card-footer text-center bg-secondary text-light d-flex justify-content-between align-items-center">
     <span>
-      <%= link_to 'Edit Post', edit_user_post_path(@post)  %>
+      <%= link_to 'Edit Post', edit_user_post_path(@post), class: 'btn btn-info' %>
     </span>
+    <span class='fs-3'>Thank you</span>
     <span>
       <%= button_to "Destroy this post", user_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
     </span>
   </div>
-  <div class="card-footer text-center bg-secondary fs-3 text-light">
-    Thank you
-  </div>
+
 </div>
