@@ -1,7 +1,4 @@
-// .user-image {
-//     width: 200px !important;
-//     height: 200px !important;
-// }
+
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +6,6 @@
 }
 
 .user-detail {
-  // height: 200px !important;
-
   .user-name {
     font-size: 4rem;
 
@@ -31,4 +26,21 @@
   &:hover {
     background-color: bisque;
   }
+}
+
+.notice {
+  padding: 1rem;
+  top: 5%;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.like-btn {
+  border-collapse: collapse;
+  background-color: transparent;
+  display: block;
+  color: white;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
