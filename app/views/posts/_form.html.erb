@@ -1,0 +1,23 @@
+<%=  form_with model: [@current_user, @post], class: "m-lg-4 m-sm-2" do |form| %>
+  <% if @post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :Title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :Post, class: "form-label" %>
+    <%= form.text_area :text, class: "form-control", rows: "10", style: "height:100%" %>
+  </div>
+  <div class="mb-3">
+    <%=form.submit "Post", disable_with: 'Creatinging...', class: 'btn btn-dark fs-3' %>
+  </div>
+<% end %>
