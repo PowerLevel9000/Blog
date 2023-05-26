@@ -3,7 +3,8 @@
     <div class="card-header bg-transparent p-0 "><%= render 'users/user_badge', user: post.author %></div>
     <div class="card-body text-success">
       <h5 class="card-title"><%= link_to post.title, user_post_path(post.author, post), class: 'text-decoration-none' %></h5>
-      <p class="card-text"><%= post.text.length > 100 ? post.text[0,100]... : post.text %></p>
+      <% text = post.text.split("\n").first.strip %>
+      <p class="card-text"><%= text.start_with?('#') ? text[1..100] : text[0..99] %><%= '...' if text.length > 100 %></p>
     </div>
     <% if comments==true %>
       <ul class="list-group list-group-flush">

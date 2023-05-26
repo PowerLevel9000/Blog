@@ -26,6 +26,17 @@ class PostsController < ApplicationController
     )
     redirect_to user_post_path(@current_user, @post)
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+  
+    if @post.destroy
+      redirect_to root_path, notice: "Post was successfully destroyed."
+    else
+      redirect_to root_path, alert: "Failed to destroy post."
+    end
+  end
+  
   
   private 
 
