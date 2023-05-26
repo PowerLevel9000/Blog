@@ -7,9 +7,13 @@ class CommentsController < ApplicationController
     def create
       user = current_user
       post = Post.find(params[:post_id])
-      new_comment =
-        Comment.create(post: post, author: user, text: comment_params['text'])
-        redirect_to request.referrer
+      new_comment = Comment.new(post: post, author: user, text: comment_params['text'])
+  
+      if new_comment.save
+        redirect_to request.referrer, notice: 'Comment created successfully!'
+      else
+        redirect_to request.referrer, alert: 'Comment could not be created.'
+      end
     end
 
     private
