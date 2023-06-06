@@ -8,9 +8,10 @@
   <div class="card-body">
     <p class="card-text"><%= markdown(@post.text) %></p>
   </div>
+  <h3 class='fs-3 text-center bold text-warning'>💬 Comments 🗨️</h3>
   <ul class="list-group list-group-flush">
     <% @post.comments.each do |comment| %>
-      <li class="comments list-group-item"><%= comment.author.name%> : <%= comment.text %></li>
+      <li class="comments list-group-item d-flex gap-2"><span><%= render 'users/user_badge', user: comment.author %></span> : <%= comment.text %></li>
     <% end %>
   </ul>
   <div class="card-footer text-center bg-secondary text-light d-flex justify-content-between align-items-center">
