@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.includes(:author)
   end
 
   def feed
-    @posts = Post.all
+    @posts = Post.includes(:author).order(:updated_at)
   end
 
   def show
