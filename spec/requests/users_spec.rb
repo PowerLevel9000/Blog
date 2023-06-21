@@ -9,11 +9,6 @@ RSpec.describe 'Users', type: :request do
     }
     @user = User.create! user_attributes
   end
-
-  after :all do
-    User.destroy_all
-  end
-
   describe 'GET /index' do
     it ' response status should be  correct' do
       get users_url

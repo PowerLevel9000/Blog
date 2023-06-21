@@ -6,10 +6,6 @@ RSpec.describe User, type: :model do
     @user_one.save
   end
 
-  after :all do
-    User.destroy_all
-  end
-
   it "should give the name of user variable's value" do
     expect(@user_one.name).to eq('jack')
     expect(@user_one.bio).to eq('es dunia ka papa')

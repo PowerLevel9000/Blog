@@ -6,11 +6,6 @@ RSpec.describe 'Posts', type: :request do
     @post = Post.create(author: @user, title: 'Shiv Shambhu', text: "i don&#39;t have start neigther end")
   end
 
-  after :all do
-    User.destroy_all
-    Post.destroy_all
-  end
-
   describe 'Get /users/[:id]/posts' do
     it 'response status should be  correct' do
       get user_posts_url(@user)
