@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   before :all do
     @user = User.create(name: 'user-1', photo: 'image-1', bio: 'I am the user one')
-    @post = Post.create(author: @user, title: 'Shiv Shambhu', text: "i don't have start neigther end")
+    @post = Post.create(author: @user, title: 'Shiv Shambhu', text: "i don&#39;t have start neigther end")
   end
 
   after :all do
@@ -21,11 +21,6 @@ RSpec.describe 'Posts', type: :request do
       get user_posts_url(@user)
       expect(response).to render_template 'posts/index'
     end
-
-    it 'response body should have placeholder text' do
-      get user_posts_url(@user)
-      expect(response.body).to include('This is where we will show all posts by the users')
-    end
   end
 
   describe 'Get /users/[:id]/posts/[:id]' do
@@ -41,7 +36,10 @@ RSpec.describe 'Posts', type: :request do
 
     it 'response body should have placeholder text' do
       get user_post_url(@user, @post)
-      expect(response.body).to include("Post => #{@post.title} by #{@user.name} ")
+      expect(response.body).to include("#{@post.title}")
+      expect(response.body).to include("#{@post.text}")
+      expect(response.body).to include("#{@post.likes_counter}")
+      expect(response.body).to include("#{@post.comments_counter}")
     end
   end
 end

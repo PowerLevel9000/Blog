@@ -43,7 +43,9 @@ RSpec.describe 'Users', type: :request do
 
     it 'response body should have placeholder text' do
       get user_url(@user)
-      expect(response.body).to include('Posts from Specifice users')
+      expect(response.body).to include("#{@user.name}")
+      expect(response.body).to include("#{@user.bio}")
+      expect(response.body).to include("#{@user.posts_counter}")
     end
   end
 end
