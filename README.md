@@ -168,6 +168,13 @@ npx stylelint "**/*.{css,scss}" //=> for CSS or SASS file linting
 - Twitter: [@PowerLevel9002](https://twitter.com/PowerLevel9002)
 - LinkedIn: [Adarsh pathak](https://linkedin.com/in/PowerLevel)
 
+👤 **Damilare Adepoju**
+
+- GitHub: [@githubhandle](https://github.com/adamilare)
+- Twitter: [@twitterhandle](https://twitter.com/mailtodare)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/damilareadepoju)
+- GitUp Page: [My Page](https://adamilare.github.io/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
