@@ -79,3 +79,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+# user Authentication
+gem 'devise', '~> 4.9'
