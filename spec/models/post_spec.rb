@@ -18,6 +18,23 @@ RSpec.describe Post, type: :model do
     @like_six = Like.create(author: @user_one, post: @post_one)
   end
 
+  after :all do
+    @user_one.destroy
+    # @post_one.destroy
+    @comment_one.destroy
+    @comment_two.destroy
+    @comment_five.destroy
+    @comment_three.destroy
+    @comment_four.destroy
+    @comment_six.destroy
+    @like_one.destroy
+    @like_two.destroy
+    @like_three.destroy
+    @like_four.destroy
+    @like_five.destroy
+    @like_six.destroy
+  end
+
   describe 'Comment testing along with associations' do
     it 'should increment coumnet counter when coment created ' do
       expect(@post_one.comments.count).to eq(6)

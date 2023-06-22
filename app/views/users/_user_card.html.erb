@@ -1,6 +1,6 @@
  
 <div class="container mb-2 p-0 rounded border">
-  <%= link_to user_path(user), class: "user-detail p-0 w-100 text-decoration-none" do %>
+  <%= link_to user_path(user), class: "user-detail p-0 w-100 text-decoration-none", id: "user-card" do %>
     <div class="row p-lg-0">
       <div class="col-lg-3 col-md-3 col-sm-12">
         <%= image_tag("#{user.photo}", alt: "#{user.name}-img", class: "user-image p-0 img-thumbnail w-100") %>
