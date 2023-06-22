@@ -81,4 +81,4 @@ group :test do
 end
 
 # user Authentication
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'

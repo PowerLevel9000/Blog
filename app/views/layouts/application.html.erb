@@ -28,10 +28,7 @@
               <%= link_to 'Feed', feed_path, class: 'nav-link' %>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
         </div>
       </div>
     </nav>
