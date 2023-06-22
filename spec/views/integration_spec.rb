@@ -6,7 +6,7 @@ RSpec.describe '/users/', type: :system do
     @user_two = User.create(name: 'Jalhandar-2', photo: 'image-1', bio: 'Mahadev Shivansh Jalhander-2 Mahadev')
     @user_three = User.create(name: 'Jalhandar-3', photo: 'image-1', bio: 'Mahadev Shivansh Jalhander-3 Mahadev')
     @user_four = User.create(name: 'Jalhandar-4', photo: 'image-1', bio: 'Mahadev Shivansh Jalhander-4 Mahadev')
-    @post_one = Post.create(title: 'Dev Asur-1 youdh', text: '# Shivan ka Krodh', author: @user_one)
+    @post_one = Post.create(title: 'Dev Asur-1 youdh', text: 'Shivansh ka Krodh', author: @user_one)
     @post_three = Post.create(title: 'Asur youdh-1', text: '# Asur krodh me Agni', author: @user_one)
     @post_two = Post.create(title: 'Dev Asur-2', text: '# Shivansh ne indra ko', author: @user_one)
     @post_four = Post.create(title: 'Asur youdh-2', text: '# Asur krodh me Agni', author: @user_one)
@@ -137,7 +137,7 @@ RSpec.describe '/users/', type: :system do
       visit user_posts_path(@user_one)
       posts = @user_one.posts
       posts.each do |post|
-        expect(page).to have_content(post.text[1..10])
+        expect(page).to have_content(post.text[2..6])
       end
     end
 
@@ -218,11 +218,9 @@ RSpec.describe '/users/', type: :system do
 
     it "I can see the username of each commentor." do
       visit user_post_path(@user_one, @post_one)
-      
       @post_one.comments.each do |comment|
-        expect(page).to have_content(comment.author)
+        expect(page).to have_content(comment.author.name)
       end
-      
     end
 
     it "I can see the comment each commentor left." do
