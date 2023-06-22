@@ -177,7 +177,7 @@ RSpec.describe '/users/', type: :system do
 
     it 'I can see a section for pagination' do
       visit user_posts_path(@user_one)
-      expect(page).to have_content("Pagination")
+      expect(page).to have_content('Pagination')
     end
 
     it "When I click on a post, it redirects me to that post's show page." do
@@ -189,41 +189,40 @@ RSpec.describe '/users/', type: :system do
     end
   end
 
-  describe "Post show page" do
-    
+  describe 'Post show page' do
     it "I can see the post's title" do
       visit user_post_path(@user_one, @post_one)
       expect(page).to have_content(@post_one.title)
     end
 
-    it "I can see who wrote the post" do
+    it 'I can see who wrote the post' do
       visit user_post_path(@user_one, @post_one)
       expect(page).to have_content(@post_one.author.name)
     end
 
-    it "I can see how many comments it has." do
+    it 'I can see how many comments it has.' do
       visit user_post_path(@user_one, @post_one)
       expect(page).to have_content(@post_one.comments_counter)
     end
 
-    it "I can see how many likes it has." do
+    it 'I can see how many likes it has.' do
       visit user_post_path(@user_one, @post_one)
       expect(page).to have_content(@post_one.likes_counter)
     end
 
-    it "I can see the post body." do
+    it 'I can see the post body.' do
       visit user_post_path(@user_one, @post_one)
       expect(page).to have_content(@post_one.text)
     end
 
-    it "I can see the username of each commentor." do
+    it 'I can see the username of each commentor.' do
       visit user_post_path(@user_one, @post_one)
       @post_one.comments.each do |comment|
         expect(page).to have_content(comment.author.name)
       end
     end
 
-    it "I can see the comment each commentor left." do
+    it 'I can see the comment each commentor left.' do
       visit user_post_path(@user_one, @post_one)
       @post_one.comments.each do |comment|
         expect(page).to have_content(comment.text)
