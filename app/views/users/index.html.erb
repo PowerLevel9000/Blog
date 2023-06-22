@@ -1,6 +1,7 @@
-<% if @user == nil %>
+<% if @user  %>
 <p>No user added yet
-<% else %>
+<% else %> 
+<%end%>
 <%= render 'layouts/title', title: "Our Blog App has #{User.count} Users and counting!" %>
 <div class="text-end">
   <%= link_to "New Post",  new_user_post_path(@current_user), class: 'badge bg-primary text-decoration-none text-light' %> 
@@ -10,4 +11,4 @@
     <%= render 'user_card', user: user %>
   <% end %>
 </div>
-<% end%>
+<%end%> 
