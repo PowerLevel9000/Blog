@@ -8,13 +8,6 @@ RSpec.describe Post, type: :model do
     @like_one = Like.create(author: @user_one, post: @post_one)
   end
 
-  after :all do
-    User.destroy_all
-    Comment.destroy_all
-    Post.destroy_all
-    Like.destroy_all
-  end
-
   describe 'Post validation' do
     it 'validates that post title is present' do
       @post_one.title = nil

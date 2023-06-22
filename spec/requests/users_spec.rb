@@ -9,11 +9,6 @@ RSpec.describe 'Users', type: :request do
     }
     @user = User.create! user_attributes
   end
-
-  after :all do
-    User.destroy_all
-  end
-
   describe 'GET /index' do
     it ' response status should be  correct' do
       get users_url
@@ -43,7 +38,9 @@ RSpec.describe 'Users', type: :request do
 
     it 'response body should have placeholder text' do
       get user_url(@user)
-      expect(response.body).to include('Posts from Specifice users')
+      expect(response.body).to include(@user.name.to_s)
+      expect(response.body).to include(@user.bio.to_s)
+      expect(response.body).to include(@user.posts_counter.to_s)
     end
   end
 end

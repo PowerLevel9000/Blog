@@ -19,10 +19,20 @@ RSpec.describe Post, type: :model do
   end
 
   after :all do
-    User.destroy_all
-    Comment.destroy_all
-    Like.destroy_all
-    Post.destroy_all
+    @user_one.destroy
+    # @post_one.destroy
+    @comment_one.destroy
+    @comment_two.destroy
+    @comment_five.destroy
+    @comment_three.destroy
+    @comment_four.destroy
+    @comment_six.destroy
+    @like_one.destroy
+    @like_two.destroy
+    @like_three.destroy
+    @like_four.destroy
+    @like_five.destroy
+    @like_six.destroy
   end
 
   describe 'Comment testing along with associations' do

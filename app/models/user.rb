@@ -13,6 +13,6 @@ class User < ApplicationRecord
 
   # displaying last three Posts made by user
   def last_three
-    posts.last(3)
+    posts.order(created_at: :desc).limit(3)
   end
 end
