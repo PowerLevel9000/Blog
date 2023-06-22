@@ -94,7 +94,6 @@ RSpec.describe '/users/', type: :system do
       expect(page).to have_link('See all Posts')
     end
 
-
     it "When I click a user's post, it redirects me to that post's show page" do
       visit user_path(@user_one)
       post = @user_one.last_three[0]
