@@ -1,38 +1,69 @@
-<div class="card border-info  m-3">
-  <div class="card-header bg-transparent p-0"><%= render 'users/user_badge', user: @post.author %></div>
+<div class="card border-info m-3">
+  <div class="card-header bg-transparent p-0"><%= render "users/user_badge", user: @post.author %></div>
   <h3 class="card-header d-flex justify-content-between fs-2 m-0 p-2 bg-info"><%= @post.title %>
-<span class="d-flex gap-2">
-  <a href="#comments" class="text-decoration-none text-light">Comments 💬 : <%= @post.comments_counter %></a>
-  <% if user_signed_in? %>
-    <%= button_to "Like 💕 : #{@post.likes_counter} ",
-                  user_post_likes_path(user_id: @current_user.id, post_id: @post.id),
-                  method: :post,
-                  class: 'like-btn d-block' %>
-  <%else%>
-    <%= link_to "Like 💕 : #{@post.likes_counter} ", user_session_path, class: 'like-btn d-block text-decoration-none' %>
-  <% end %>
-</span>
-    
-    </h3>
+    <span class="d-flex gap-2">
+      <a href="#comments" class="text-decoration-none text-light">Comments 💬 :
+        <%= @post.comments_counter %></a>
+      <% if user_signed_in? %>
+        <%= button_to "Like 💕 : #{@post.likes_counter} ",
+        user_post_likes_path(user_id: @current_user.id, post_id: @post.id),
+        method: :post,
+        class: "like-btn d-block" %>
+      <% else %>
+        <%= link_to "Like 💕 : #{@post.likes_counter} ",
+        user_session_path,
+        class: "like-btn d-block text-decoration-none" %>
+      <% end %>
+    </span>
+
+  </h3>
   <div class="card-body">
     <p class="card-text"><%= markdown(@post.text) %></p>
   </div>
   <h3 class='fs-3 text-center bold text-warning'>💬 Comments 🗨️</h3>
   <ul class="list-group list-group-flush">
     <% @post.comments.each do |comment| %>
-      <li class="comments list-group-item d-flex gap-2"><span><%= render 'users/user_badge', user: comment.author %></span> : <%= comment.text %></li>
+      <li class="comments list-group-item d-flex gap-2"><span><%= render "users/user_badge", user: comment.author %></span>
+        :
+        <%= comment.text %></li>
     <% end %>
   </ul>
-  <div class="card-footer text-center bg-secondary text-light d-flex justify-content-between align-items-center">
-    <span>
-      <%= link_to 'Edit Post', edit_user_post_path(@post), class: 'btn btn-info' %>
-    </span>
-    <span class='fs-3'>Thank you</span>
-    <span>
-      <%= button_to "Destroy this post", user_post_path(@post), method: :delete, data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?" }, class: 'btn btn-danger' %>
-    </span>
+  <div
+    class="
+      card-footer
+      text-center
+      bg-secondary
+      text-light
+      d-flex
+      justify-content-between
+      align-items-center
+    "
+  >
+
+    <% if @current_user && @current_user.id == @post.author.id %>
+      <span>
+        <%= link_to "Edit Post", edit_user_post_path(@post), class: "btn btn-info" %>
+      </span>
+      <span class='fs-3'>Thank you</span>
+      <span>
+        <%= button_to "Destroy this post",
+        user_post_path(@post),
+        method: :delete,
+        data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        },
+        class: "btn btn-danger" %>
+      </span>
+    <% else %>
+      <span class='fs-2'>Thank you</span>
+      <span class='fs-2'>posted at <%= @post.created_at.strftime("%Y-%m-%d") %></span>
+    <% end %>
+
   </div>
 </div>
-<%= render "comments/form", url:user_post_comments_path(user_id:@user.id ,post_id:@post.id), locals:{post_id:@post.id}%>
+<%= render "comments/form",
+url: user_post_comments_path(user_id: @user.id, post_id: @post.id),
+locals: {
+  post_id: @post.id
+} %>

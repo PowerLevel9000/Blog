@@ -28,7 +28,12 @@
               <%= link_to 'Feed', feed_path, class: 'nav-link' %>
             </li>
           </ul>
-          <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
+          
+          <% if user_signed_in? %>
+            <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn btn-success' %>
+            <% else %>
+            <%= button_to "Log in", user_session_path, class: 'btn btn-success' %>
+          <% end %>
         </div>
       </div>
     </nav>
