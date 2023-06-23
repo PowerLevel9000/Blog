@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:feed, :show]
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:author)

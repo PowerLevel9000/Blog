@@ -1,4 +1,12 @@
 <%= render 'user_card', user: @user %>
+
+
+<% if can?(:create, Post) %>
+  <div class='text-center'>
+    <%= link_to "New Post",  new_user_post_path(@current_user), class: 'badge bg-primary text-decoration-none text-light' %> 
+  </div>
+<% end %>
+
 <div class="card">
   <div class="card-header bg-dark text-light">
     <h2>Bio</h2>

@@ -1,9 +1,8 @@
 <% if @users == nil  %>
-<p>No user added yet
+<p>No user added yet</p>
 <% else %> 
 <%= render 'layouts/title', title: "Our Blog App has #{User.count} Users and counting!" %>
 <div class="text-end">
-  <%= link_to "New Post",  new_user_post_path(@current_user), class: 'badge bg-primary text-decoration-none text-light' %> 
 </div>
 <div class="user user-shelf">
   <% @users.each do |user| %>

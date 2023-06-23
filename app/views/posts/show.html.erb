@@ -1,10 +1,19 @@
 <div class="card border-info  m-3">
   <div class="card-header bg-transparent p-0"><%= render 'users/user_badge', user: @post.author %></div>
   <h3 class="card-header d-flex justify-content-between fs-2 m-0 p-2 bg-info"><%= @post.title %>
-    <span class="d-flex gap-2">
-      <a href="#comments" class="text-decoration-none text-light">Comments 💬 :<%= @post.comments_counter %></a>
-      <%= button_to "Like 💕 : #{@post.likes_counter} ", user_post_likes_path(user_id: @current_user.id, post_id: @post.id), method: :post, class: 'like-btn d-block' %>
-    </span></h3>
+<span class="d-flex gap-2">
+  <a href="#comments" class="text-decoration-none text-light">Comments 💬 : <%= @post.comments_counter %></a>
+  <% if user_signed_in? %>
+    <%= button_to "Like 💕 : #{@post.likes_counter} ",
+                  user_post_likes_path(user_id: @current_user.id, post_id: @post.id),
+                  method: :post,
+                  class: 'like-btn d-block' %>
+  <%else%>
+    <%= link_to "Like 💕 : #{@post.likes_counter} ", user_session_path, class: 'like-btn d-block text-decoration-none' %>
+  <% end %>
+</span>
+    
+    </h3>
   <div class="card-body">
     <p class="card-text"><%= markdown(@post.text) %></p>
   </div>
