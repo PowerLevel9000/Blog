@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
+
+  attribute :role, default: 'user'
   # Associations
   has_many :posts, class_name: 'Post', foreign_key: 'author_id', dependent: :destroy
   has_many :comments, class_name: 'Comment', foreign_key: 'author_id', dependent: :destroy
