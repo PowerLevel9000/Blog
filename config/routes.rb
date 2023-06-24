@@ -9,4 +9,14 @@ Rails.application.routes.draw do
     end
   end
   get 'feed', to: "posts#feed"
+
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [] do
+        resources :posts, only: [:index] do
+          resources :comments, only: [:index, :create]
+        end
+      end
+    end
+  end
 end
