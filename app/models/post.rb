@@ -23,7 +23,6 @@ class Post < ApplicationRecord
 
   private
 
-  # I want to use my module can you help
   # Incrementor
   def increment_user_posts_counter
     author.posts_counter += 1

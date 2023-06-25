@@ -57,7 +57,8 @@
       </span>
     <% else %>
       <span class='fs-2'>Thank you</span>
-      <span class='fs-2'>posted at <%= @post.created_at.strftime("%Y-%m-%d") %></span>
+      <span class='fs-2'>posted at
+        <%= @post.created_at.strftime("%Y-%m-%d") %></span>
     <% end %>
 
   </div>
