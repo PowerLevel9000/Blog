@@ -5,7 +5,7 @@
 </div>
 
 # 📗 Table of Contents
-
+- [🈸 App Mock](#app-mock)
 - [📖 About the Project](#about-project)
   - [🧪 Linters](#linters)
   - [🛠 Built With](#built-with)
@@ -18,7 +18,7 @@
   - [Usage](#usage)
   - [Run tests](#run-tests)
 - [👥 Authors](#authors)
-<!-- - [👁️ Presentation for Project](#video-presentation-for-our-project) -->
+- [👁️ Presentation for Project](#video-presentation-for-our-project)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -27,7 +27,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-#  App mock
+# 🈸 App mock <a name="app-mock"></a>
 
   <img src="./personal-branding/app.png" alt="App Mock under construction..." width="100%"  height="auto" />
 
@@ -74,10 +74,15 @@ In this project we utilize our skills and knowledge to create this project
 ### Key Features <a name="key-features"></a>
 
 - **Create A blog**
-- **log in**
-- **Sign in**
+- **Account Feature**
+- **Dashboard**
+- **Database**
+- **Authentication And Authorization**
 - **like**
 - **Comment**
+- **log in**
+- **Sign in**
+- **Api Integration**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,6 +116,15 @@ for cloning follow this steps
 - or just download `ZIP` file
 - [ ] Change UserName and Password with yours in [database.yml](./config/database.yml) file 
 
+**OR**
+
+- [ ] Delete the [credentials.yml.enc](./config/credentials.yml.enc)
+- run `EDITOR="<your editor name for example code is for VS code> --wait" bin/rails credentials:edit"` and add following line in the file and close it. message pop up file save
+``` 
+user:
+  username: "your user name"
+  password: "your Password"
+``` 
 ### Install
 
 Install this project with:
@@ -120,11 +134,7 @@ for now you don't need any installation to run project if you already followed [
 and 
 ```
 bundle install
-
-```
-```
 npm install
-
 ```
 
 ### Usage
@@ -134,7 +144,8 @@ To run the project, execute the following command:
 you can use it for you library purpose 
 run following commands in you `terminal` in root `dir` and if you open http://localhost:3000/ you can see App running 
 ```
-rails s
+rails s # for running app server on port 3000
+rails c # for rails console
 ```
 
 ### Run tests
@@ -143,7 +154,7 @@ To run tests, run the following command:
 
 
 ```
-rspec spec
+rspec spec 
 ```
 
 And for Linters
@@ -167,6 +178,7 @@ npx stylelint "**/*.{css,scss}" //=> for CSS or SASS file linting
 - GitHub: [@PowerLevel9000](https://github.com/PowerLevel9000)
 - Twitter: [@PowerLevel9002](https://twitter.com/PowerLevel9002)
 - LinkedIn: [Adarsh pathak](https://linkedin.com/in/PowerLevel)
+- Portfolio: [Adarsh Pathak](https://PowerLevel9000.github.io/portfolio-project/)
 
 👤 **Damilare Adepoju**
 
@@ -183,6 +195,9 @@ npx stylelint "**/*.{css,scss}" //=> for CSS or SASS file linting
 
 - [ ] **Styling of various webpage**
 - [ ] **Improved Dashboard**
+- [ ] **Notification Feature**
+- [ ] **Animation**
+- [ ] **Dislike and Edit comments**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -201,8 +216,11 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
+[![BuyMeACoffee](https://img.shields.io/badge/Buy%Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/adi8090808E)
 
-If you like this project please give it star or buy me a coffee
+**or**
+
+If you like this project please give it star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

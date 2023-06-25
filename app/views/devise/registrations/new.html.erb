@@ -6,23 +6,35 @@
 
     <div class="field mb-2">
       <%= f.label :name, class: "form-label" %><br/>
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control w-75" %>
+      <%= f.text_field :name,
+                   autofocus: true,
+                   autocomplete: "name",
+                   class: "form-control w-75" %>
     </div>
 
     <div class="field mb-2">
       <%= f.label :bio, class: "form-label" %><br/>
-      <%= f.text_field :bio, autofocus: true, autocomplete: "bio", class: "form-control w-75" %>
+      <%= f.text_field :bio,
+                   autofocus: true,
+                   autocomplete: "bio",
+                   class: "form-control w-75" %>
     </div>
 
     <div class="field mb-2">
       <%= f.label :photo, class: "form-label" %><em>(Only api based photo URL)</em>
-          <br/>
-      <%= f.text_field :photo, autofocus: true, autocomplete: "photo", class: "form-control w-75" %>
+      <br/>
+      <%= f.text_field :photo,
+                   autofocus: true,
+                   autocomplete: "photo",
+                   class: "form-control w-75" %>
     </div>
 
     <div class="field mb-2">
       <%= f.label :email, class: "form-label" %><br/>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-75" %>
+      <%= f.email_field :email,
+                    autofocus: true,
+                    autocomplete: "email",
+                    class: "form-control w-75" %>
     </div>
 
     <div class="field mb-2">
@@ -31,12 +43,16 @@
         <em>(<%= @minimum_password_length %>
           characters minimum)</em>
       <% end %><br/>
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-control w-75" %>
+      <%= f.password_field :password,
+                       autocomplete: "new-password",
+                       class: "form-control w-75" %>
     </div>
 
     <div class="field mb-2">
       <%= f.label :password_confirmation, class: "form-label" %><br/>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control w-75" %>
+      <%= f.password_field :password_confirmation,
+                       autocomplete: "new-password",
+                       class: "form-control w-75" %>
     </div>
 
     <div class="actions mb-2">

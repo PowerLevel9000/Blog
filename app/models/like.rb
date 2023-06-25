@@ -9,7 +9,6 @@ class Like < ApplicationRecord
 
   private
 
-  # I want to use my module can you help
   # Incrementor
   def increment_like_on_posts
     post.likes_counter += 1

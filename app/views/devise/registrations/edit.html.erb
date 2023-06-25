@@ -7,22 +7,34 @@
 
     <div class="field mb-3">
       <%= f.label :name, class: "form-label" %><br/>
-      <%= f.text_field :name, autofocus: true, class: "form-control w-75", autocomplete: "name" %>
+      <%= f.text_field :name,
+                   autofocus: true,
+                   class: "form-control w-75",
+                   autocomplete: "name" %>
     </div>
 
     <div class="field mb-3">
       <%= f.label :bio, class: "form-label" %><br/>
-      <%= f.text_area :bio, autofocus: true, class: "form-control w-75", autocomplete: "bio" %>
+      <%= f.text_area :bio,
+                  autofocus: true,
+                  class: "form-control w-75",
+                  autocomplete: "bio" %>
     </div>
 
     <div class="field mb-3">
       <%= f.label :photo, class: "form-label" %><br/>
-      <%= f.text_field :photo, autofocus: true, class: "form-control w-75", autocomplete: "photo" %>
+      <%= f.text_field :photo,
+                   autofocus: true,
+                   class: "form-control w-75",
+                   autocomplete: "photo" %>
     </div>
 
     <div class="field mb-3">
       <%= f.label :email, class: "form-label" %><br/>
-      <%= f.email_field :email, autofocus: true, class: "form-control w-75", autocomplete: "email" %>
+      <%= f.email_field :email,
+                    autofocus: true,
+                    class: "form-control w-75",
+                    autocomplete: "email" %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -33,7 +45,9 @@
     <div class="field mb-3">
       <%= f.label :password, class: "form-label" %>
       <i>(leave blank if you don't want to change it)</i><br/>
-      <%= f.password_field :password, class: "form-control w-75", autocomplete: "new-password" %>
+      <%= f.password_field :password,
+                       class: "form-control w-75",
+                       autocomplete: "new-password" %>
       <% if @minimum_password_length %>
         <br/>
         <em><%= @minimum_password_length %>
@@ -43,13 +57,17 @@
 
     <div class="field mb-3">
       <%= f.label :password_confirmation, class: "form-label" %><br/>
-      <%= f.password_field :password_confirmation, class: "form-control w-75", autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation,
+                       class: "form-control w-75",
+                       autocomplete: "new-password" %>
     </div>
 
     <div class="field mb-3">
       <%= f.label :current_password, class: "form-label" %>
       <i>(we need your current password to confirm your changes)</i><br/>
-      <%= f.password_field :current_password, class: "form-control w-75", autocomplete: "current-password" %>
+      <%= f.password_field :current_password,
+                       class: "form-control w-75",
+                       autocomplete: "current-password" %>
     </div>
 
     <div class="actions mb-3">
@@ -67,7 +85,8 @@
       confirm: "Are you sure?",
       turbo_confirm: "Are you sure?"
     },
-    method: :delete, class: "btn btn-danger" %>
+    method: :delete,
+    class: "btn btn-danger" %>
   </div>
 
   <%= link_to "Back", :back %>

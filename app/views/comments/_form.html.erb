@@ -1,7 +1,10 @@
-<%= form_with url:url, method: :post,scope: :new_comment,local: true do |f|%>
+<%= form_with url:url, method: :post,scope: :new_comment,local: true do |f| %>
   <div id="comments" class="m-3">
-    <%= render 'layouts/sub_title', title: 'Add Comments' %>
-    <%= f.text_area :text, size:'70x3', placeholder: "your comments..", class: "form-control mb-3"%>
-    <%= f.submit "Submit", disable_with: 'Submiting...', class: 'btn btn-secondary mb-3' %>
+    <%= render "layouts/sub_title", title: "Add Comments" %>
+    <%= f.text_area :text,
+                size: "70x3",
+                placeholder: "your comments..",
+                class: "form-control mb-3" %>
+    <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-secondary mb-3" %>
   </div>
-<%end%>
+<% end %>
