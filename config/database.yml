@@ -92,6 +92,6 @@ production:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: Blog_production
-  username: Blog
+  database: blog_production
+  username: blog
   password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
