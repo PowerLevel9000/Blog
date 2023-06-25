@@ -22,7 +22,7 @@ class Post < ApplicationRecord
   end
 
   private
-  
+
   # Incrementor
   def increment_user_posts_counter
     author.posts_counter += 1
