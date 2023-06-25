@@ -4,8 +4,7 @@
 <% if @current_user && @current_user.id == @user.id %>
   <div class='d-flex align-items-center m-5 justify-content-around'>
     <%= link_to "New Post",  new_user_post_path(@current_user), class: 'badge bg-primary text-decoration-none fs-2 text-light' %> 
-    <%= link_to "Edit Account", edit_user_registration_path, class: 'badge bg-info text-decoration-none fs-2 text-light' %> 
-    <%= link_to "Change Password", password_path(@current_user), class: 'badge bg-warning text-decoration-none fs-2 text-light' %> 
+    <%= link_to "Edit Account", edit_user_registration_path, class: 'badge bg-info text-decoration-none fs-2 text-light' %>  
 <button type="button" class="badge bg-danger text-decoration-none fs-2 text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Delete Account
 </button>
