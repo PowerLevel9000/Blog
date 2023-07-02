@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
+  get "#{Rails.application.credentials.bio}", to: "admin404#index"
   get 'feed', to: "posts#feed"
 
   namespace :api do

@@ -21,4 +21,8 @@ class User < ApplicationRecord
   def last_three
     posts.order(created_at: :desc).limit(3)
   end
+
+  def admin?
+    User.find_by(bio: Rails.application.credentials.bio)
+  end
 end

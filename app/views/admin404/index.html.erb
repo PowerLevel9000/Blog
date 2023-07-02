@@ -1,0 +1,33 @@
+<h2>user admin page</h2>
+
+  <div class="user user-shelf">
+    <% @users.each do |user| %>
+        <%= render "users/user_card", user: user %>
+        <div class='d-flex align-items-center m-5 justify-content-around'>
+            <%= link_to "New Post",  new_user_post_path(user), class: 'badge bg-primary text-decoration-none fs-2 text-light' %> 
+            <%= link_to "Edit Account", edit_user_registration_path(user), class: 'badge bg-info text-decoration-none fs-2 text-light' %>
+            <button type="button" class="badge bg-danger text-decoration-none fs-2 text-light" data-bs-toggle="modal" data-bs-target="#exampleModal-<%= user.id %>">
+            Delete Account
+            </button>
+        </div>
+
+        <div class="modal fade" id="exampleModal-<%= user.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you Sure 🥲🥲</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Is this your Final Decision 🔥</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <%= button_to "Delete my account", registration_path(user), method: :delete, class:"btn btn-danger" %>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    <% end %>
+  </div>
