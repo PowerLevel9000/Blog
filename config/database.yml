@@ -17,8 +17,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: <%= Rails.application.credentials.user[:username] %>
-  password: <%= Rails.application.credentials.user[:password] %>
+  # username: <%= Rails.application.credentials.user[:username] %>
+  # password: <%= Rails.application.credentials.user[:password] %>
 
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -85,9 +85,13 @@ test:
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
-#
 production:
   <<: *default
-  database: Blog_production
-  username: Blog
+  url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: blog_production
+  username: blog
   password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
