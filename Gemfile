@@ -87,4 +87,4 @@ gem 'cancancan', '~> 3.5'
 
 gem 'erb-formatter', '~> 0.4.3'
 
-gem "will_paginate", "~> 4.0"
+gem 'will_paginate', '~> 4.0'
