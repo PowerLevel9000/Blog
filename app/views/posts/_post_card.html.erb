@@ -1,0 +1,41 @@
+<% posts.each do |post| %>
+  <div class="card border-success m-3">
+    <div class="card-header bg-transparent p-0 "><%= render "users/user_badge", user: post.author %></div>
+    <div class="card-body text-success">
+      <h5 class="card-title"><%= link_to post.title,
+        user_post_path(post.author, post),
+        class: "text-decoration-none" %></h5>
+      <% text = post.text.split("\n").first.strip %>
+      <p class="card-text"><%= text.start_with?("#") ? text[1..100] : text[0..99] %><%= "..." if text.length > 100 %></p>
+    </div>
+    <% if comments==true %>
+      <ul class="list-group list-group-flush">
+        <% post.recent_five_comments.each do |comment| %>
+          <li class="comments list-group-item"><%= comment.author.name %>
+            :
+            <%= comment.text %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <div
+      class="
+        card-footer
+        bg-secondary
+        text-light
+        border-success
+        d-flex
+        justify-content-between
+        align-items-center
+      "
+    >
+      <span>Posted on :
+        <%= post.created_at.strftime("%Y-%m-%d") %></span>
+      <div class="d-flex gap-2">
+        <span>Comments 💬:
+          <%= post.comments_counter %></span>
+        <span>Likes 💕:
+          <%= post.likes_counter %></span>
+      </div>
+    </div>
+  </div>
+<% end %>

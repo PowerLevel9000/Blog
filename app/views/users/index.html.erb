@@ -1,0 +1,13 @@
+<% if @users == nil %>
+  <p>No user added yet</p>
+<% else %>
+  <%= render "layouts/title",
+  title: "Our Blog App has #{User.count} Users and counting!" %>
+  <div class="text-end">
+  </div>
+  <div class="user user-shelf">
+    <% @users.each do |user| %>
+      <%= render "user_card", user: user %>
+    <% end %>
+  </div>
+<% end %>

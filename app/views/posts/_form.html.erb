@@ -1,0 +1,58 @@
+<!-- Button trigger modal -->
+<div class='text-center'>
+<button type="button" class="btn btn-primary text-center mt-3 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  click me For instruction
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1>Markdown Usage Instructions for Create Post</h1>
+        <h2>Modal Title</h2>
+        <p>To create a Post title, use double hash (`##`) followed by the title text.</p>
+        <pre>## Modal Title</pre>
+        <h2>List Example</h2>
+        <p>To create a list, use a hyphen (`-`) followed by a space for each list item.</p>
+        <pre>
+          - Item 1
+          - Item 2
+          - Item 3
+        </pre>
+        <h2>Image Example</h2>
+        <p>To insert an image, use an exclamation mark (`!`), followed by square brackets containing the alt text, and parentheses containing the image URL.</p>
+        <pre>![Image Alt Text](https://example.com/image.jpg)</pre>
+        <h5 class="text-danger"> we only accept image or Gif with url </h5>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<%=  form_with model: [@current_user, @post], class: "m-lg-4 m-sm-2" do |form| %>
+  <% if @post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :Title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :Post, class: "form-label" %>
+    <%= form.text_area :text, class: "form-control", rows: "10", style: "height:100%" %>
+  </div>
+  <div class="mb-3">
+    <%=form.submit "Post", disable_with: 'Creatinging...', class: 'btn btn-dark fs-3' %>
+  </div>
+<% end %>
