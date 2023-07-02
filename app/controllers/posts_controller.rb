@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[feed show]
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:author)
+    @posts = Post.where(author_id:@user.id).paginate(page: params[:page], per_page: 3)
   end
 
   def feed
