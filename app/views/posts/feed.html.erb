@@ -1,2 +1,5 @@
 <%= render 'layouts/title', title: "Post Feed" %>
 <%= render 'post_card', posts: @posts, comments: false %>
+<div class="text-center my-5 apple_pagination">
+  <%= will_paginate @articles, container: false, page_links: false %>
+</div>
