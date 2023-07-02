@@ -49,3 +49,28 @@
   min-height: 83vh;
   background: linear-gradient(to right, #ffbf00, #ff0080);
 }
+
+.next_page,
+.previous_page {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  &:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+  }
+}
