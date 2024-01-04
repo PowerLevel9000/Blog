@@ -5,8 +5,8 @@
       <h5 class="card-title"><%= link_to post.title,
         user_post_path(post.author, post),
         class: "text-decoration-none" %></h5>
-      <% text = post.text.split("\n").first.strip %>
-      <p class="card-text"><%= text.start_with?("#") ? text[1..100] : text[0..99] %><%= "..." if text.length > 100 %></p>
+      <%# <% text = post.text.split("\n").first.strip %>
+      <p class="card-text"><%= post.text.sub(/\!\[[^\]]*\]\([^)]*\)/, '').strip[1..500]+"..." %></p>
     </div>
     <% if comments==true %>
       <ul class="list-group list-group-flush">
