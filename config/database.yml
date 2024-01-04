@@ -17,8 +17,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # username: <%= Rails.application.credentials.user[:username] %>
-  # password: <%= Rails.application.credentials.user[:password] %>
+  username: <%= Rails.application.credentials.database_username %>
+  password: <%= Rails.application.credentials.database_password %>
 
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -27,8 +27,8 @@ default: &default
 development:
   <<: *default
   database: Blog_development
-  username: <%= Rails.application.credentials.user[:username] %>
-  password: <%= Rails.application.credentials.user[:password] %>
+  username: <%= Rails.application.credentials.database_username %>
+  password: <%= Rails.application.credentials.database_password %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -63,8 +63,8 @@ development:
 test:
   <<: *default
   database: Blog_test
-  username: <%= Rails.application.credentials.user[:username] %>
-  password: <%= Rails.application.credentials.user[:password] %>
+  username: <%= Rails.application.credentials.database_username %>
+  password: <%= Rails.application.credentials.database_password %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

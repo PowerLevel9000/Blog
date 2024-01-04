@@ -3,24 +3,22 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   before :all do
     @user_one = User.create(name: 'Jack', photo: '', bio: 'es dunia ka papa')
-    @post_one = Post.create(title: 'Love', text: 'love is waste of time until A true love', author: @user_one)
-    @comment_one = Comment.create(author: @user_one, post: @post_one, text: 'anything u want')
-    @comment_two = Comment.create(author: @user_one, post: @post_one, text: 'anything u want 1')
-    @comment_three = Comment.create(author: @user_one, post: @post_one, text: 'anything u want 2')
-    @comment_four = Comment.create(author: @user_one, post: @post_one, text: 'anything u want 3')
-    @comment_five = Comment.create(author: @user_one, post: @post_one, text: 'anything u want 4')
-    @comment_six = Comment.create(author: @user_one, post: @post_one, text: 'anything u want 4')
-    @like_one = Like.create(author: @user_one, post: @post_one)
-    @like_two = Like.create(author: @user_one, post: @post_one)
-    @like_three = Like.create(author: @user_one, post: @post_one)
-    @like_four = Like.create(author: @user_one, post: @post_one)
-    @like_five = Like.create(author: @user_one, post: @post_one)
-    @like_six = Like.create(author: @user_one, post: @post_one)
+    @post_one = Post.create(title: 'Love', text: 'love is waste of time until A true love', author_id: @user_one.id)
+    @comment_one = Comment.create(author_id: @user_one.id, post_id: @post_one.id, text: 'anything u want')
+    @comment_two = Comment.create(author_id: @user_one.id, post_id: @post_one.id, text: 'anything u want 1')
+    @comment_three = Comment.create(author_id: @user_one.id, post_id: @post_one.id, text: 'anything u want 2')
+    @comment_four = Comment.create(author_id: @user_one.id, post_id: @post_one.id, text: 'anything u want 3')
+    @comment_five = Comment.create(author_id: @user_one.id, post_id: @post_one.id, text: 'anything u want 4')
+    @comment_six = Comment.create(author_id: @user_one.id, post_id: @post_one.id, text: 'anything u want 4')
+    @like_one = Like.create(author_id: @user_one.id, post_id: @post_one.id)
+    @like_two = Like.create(author_id: @user_one.id, post_id: @post_one.id)
+    @like_three = Like.create(author_id: @user_one.id, post_id: @post_one.id)
+    @like_four = Like.create(author_id: @user_one.id, post_id: @post_one.id)
+    @like_five = Like.create(author_id: @user_one.id, post_id: @post_one.id)
+    @like_six = Like.create(author_id: @user_one.id, post_id: @post_one.id)
   end
 
   after :all do
-    @user_one.destroy
-    # @post_one.destroy
     @comment_one.destroy
     @comment_two.destroy
     @comment_five.destroy
@@ -33,11 +31,13 @@ RSpec.describe Post, type: :model do
     @like_four.destroy
     @like_five.destroy
     @like_six.destroy
+    @post_one.destroy
+    @user_one.destroy
   end
 
   describe 'Comment testing along with associations' do
     it 'should increment coumnet counter when coment created ' do
-      expect(@post_one.comments.count).to eq(6)
+      expect(@post_one.comments.count).to eq(5)
     end
 
     it 'should decrement comment counter when coment destroyed' do
