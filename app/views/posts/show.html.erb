@@ -23,7 +23,7 @@
   <h3 class='fs-3 text-center bold text-warning'>💬 Comments 🗨️</h3>
   <ul class="list-group list-group-flush">
     <% @post.comments.each do |comment| %>
-      <li class="comments list-group-item d-flex gap-2"><span><%= render "users/user_badge", user: comment.author %></span>
+      <li class="comments list-group-item d-flex gap-2"><span class="w-25"><%= render "users/user_badge", user: comment.author %></span>
         :
         <%= comment.text %></li>
     <% end %>

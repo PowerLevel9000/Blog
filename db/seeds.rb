@@ -456,6 +456,10 @@ like6_on_post10 = Like.create(author_id: user6.id, post_id: post10.id)
 like7_on_post10 = Like.create(author_id: user1.id, post_id: post10.id)
 like8_on_post10 = Like.create(author_id: user2.id, post_id: post10.id)
 
+#***************************************************************************************************************************************************
+################################################### post11 data created by user4 ###################################################################
+#***************************************************************************************************************************************************
+
 post11 = Post.create(title: ' World of Cybersecurity', text: "# The Fascinating World of Cybersecurity
 
 As technology advances, so do the challenges of securing our digital world. Cybersecurity plays a critical role in protecting our data, privacy, and digital infrastructure from threats.
@@ -467,22 +471,42 @@ We'll discuss the importance of secure communication protocols, the role of fire
 Cybersecurity is not just about technical measures; it's a multidisciplinary field that combines technology, policy, and human behavior. We'll explore the human element, such as social engineering attacks and the importance of cybersecurity awareness and education.
 
 Join me as we navigate the challenges and opportunities in the world of cybersecurity. Let's discuss strategies to protect our data, privacy, and digital infrastructure and work towards a safer digital future. #Cybersecurity #DataProtection #DigitalPrivacy
-", author_id: user3.id)
+", author_id: user4.id)
 
+# comments of post11
+comment1_on_post11 = Comment.create(author_id: user1.id, text: "Cybersecurity is the backbone of our digital world! This post brilliantly captures the essence of cybersecurity and its impact on various domains. It's incredible to witness how cybersecurity enables us to protect our data, privacy, and digital infrastructure. #Cybersecurity #DataProtection #DigitalPrivacy", post_id: post11.id)
+comment2_on_post11 = Comment.create(author_id: user2.id, text: "The transformative impact of cybersecurity is truly remarkable! This post effectively encapsulates its significance across diverse sectors. It's fascinating to see how cybersecurity reshapes industries and fosters innovation. #Cybersecurity #Innovation #TechRevolution", post_id: post11.id)
+comment3_on_post11 = Comment.create(author_id: user3.id, text: "The realm of cybersecurity is an evolving landscape! This post vividly portrays its transformative power across various domains. It's astonishing how cybersecurity fuels progress and shapes the future of technology. #Cybersecurity #TechTransformation #Innovation", post_id: post11.id)
+comment4_on_post11 = Comment.create(author_id: user4.id, text: "This post elegantly highlights the prowess of cybersecurity in protecting our digital world! It's inspiring to witness how cybersecurity-driven approaches steer advancements across industries. Truly, cybersecurity is at the forefront of innovation. #Cybersecurity #Innovation #DigitalProtection", post_id: post11.id)
 
+# likes of post11
+like1_on_post11 = Like.create(author_id: user1.id, post_id: post11.id)
+like2_on_post11 = Like.create(author_id: user2.id, post_id: post11.id)
+like3_on_post11 = Like.create(author_id: user3.id, post_id: post11.id)
+like4_on_post11 = Like.create(author_id: user4.id, post_id: post11.id)
+like5_on_post11 = Like.create(author_id: user5.id, post_id: post11.id)
 
-# Comment.create(author_id: user3.id, text: "Embark on an incredible journey to distant exoplanets and imagine the possibilities! #ExoplanetExploration #VastCosmicFrontiers", post_id: post5.id)
-# Comment.create(author_id: user3.id, text: "Delve into the captivating dance of stars and unravel the secrets of their evolution! #StellarJourney #CelestialBeauty", post_id: post4.id)
-# Comment.create(author_id: user3.id, text: "Mind-bending journey into the mysterious realm of black holes! #CosmicMysteries #BlackHoleExploration", post_id: post3.id)
-# Comment.create(author_id: user3.id, text: "Stellar evolution unfolds like a mesmerizing cosmic ballet! #StellarJourney #CelestialDance", post_id: post4.id)
+#***************************************************************************************************************************************************
+################################################### post12 data created by user4 ###################################################################
+#***************************************************************************************************************************************************
 
-# Comment.create(author_id: user4.id, text: "These things are bouncers for me 😂😂😂 I never went beyond my city yet ", post_id: post4.id)
-# Comment.create(author_id: user4.id, text: "I always fear what will happen if our entire solar system went into Black hole 😨😨😨😨😱😱", post_id: post3.id)
-# Comment.create(author_id: user4.id, text: "Again i am not going anywhere lot of responsibility 🥲🥲🥲 btw Iove your articles", post_id: post5.id)
-# Comment.create(author_id: user4.id, text: "Robot Stuffs I don't care lol 😂😂😂😂😁💕", post_id: post9.id)
-# Comment.create(author_id: user4.id, text: "I always wonder how Instagram know what i am thinking ", post_id: post10.id)
-# Comment.create(author_id: user4.id, text: "I appreciate your effort to teach me but I didn't understand  may be I am dumb ", post_id: post9.id)
-# Comment.create(author_id: user5.id, text: "hi Julien i like your comment", post_id: post2.id)
-# Comment.create(author_id: user5.id, text: "btw can you msg me private i need a contract for you
-# ", post_id: post2.id)
+post12 = Post.create(title: 'AI as a Social Threat', text: "# AI as a Social Threat
 
+Artificial Intelligence (AI) has the potential to bring about significant advancements in various domains. However, it also poses certain social threats that need to be addressed.
+
+In this post, we explore the implications of AI as a social threat. We discuss the ethical considerations surrounding AI, such as privacy, bias, and job displacement. We delve into the potential misuse of AI in surveillance, misinformation, and deepfake technologies.
+
+It is crucial to have a comprehensive understanding of the social impact of AI. We examine the responsibility of AI developers and policymakers in ensuring the ethical and responsible use of AI. We also discuss the importance of public awareness and education in navigating the challenges posed by AI.
+
+Join me as we analyze the social implications of AI. Let's foster a balanced approach that harnesses the benefits of AI while mitigating its potential threats. #ArtificialIntelligence #SocialImpact #Ethics
+", author_id: user5.id)
+
+# comments of post12
+comment1_on_post12 = Comment.create(author_id: user1.id, text: "AI is a powerful tool that can transform our world! This post brilliantly captures the essence of AI and its impact on various domains. It's incredible to witness how AI enables us to solve complex problems and drive innovation. #ArtificialIntelligence #TechInnovation #ProblemSolving", post_id: post12.id)
+comment2_on_post12 = Comment.create(author_id: user2.id, text: "The transformative impact of AI is truly remarkable! This post effectively encapsulates its significance across diverse sectors. It's fascinating to see how AI reshapes industries and fosters innovation. #ArtificialIntelligence #Innovation #TechRevolution", post_id: post12.id)
+comment3_on_post12 = Comment.create(author_id: user3.id, text: "The realm of AI is an evolving landscape! This post vividly portrays its transformative power across various domains. It's astonishing how AI fuels progress and shapes the future of technology. #ArtificialIntelligence #TechTransformation #Innovation", post_id: post12.id)
+
+# likes of post12
+like1_on_post12 = Like.create(author_id: user1.id, post_id: post12.id)
+like2_on_post12 = Like.create(author_id: user2.id, post_id: post12.id)
+like3_on_post12 = Like.create(author_id: user3.id, post_id: post12.id)
