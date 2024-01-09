@@ -1,12 +1,12 @@
 databases:
   - name: Blog
-    databaseName: Blog
-    user: Blog
+    databaseName: blog
+    user: blog
     plan: free
 
 services:
   - type: web
-    name: Blog
+    name: blog
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: Blog
+          name: blog
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
